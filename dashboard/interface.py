@@ -138,8 +138,8 @@ DOCUMENTS = [
     {"name": "Nedbank 2024 Integrated Report", "file": "2024-integrated-report-nedbank.pdf", "type": "Strategy & Governance", "icon": "📊"},
     {"name": "Nedbank 2024 Annual Results", "file": "2024-annual-results-booklet-nedbank.pdf", "type": "Financial Results", "icon": "💰"},
     {"name": "Nedbank 2024 Financial Statements", "file": "2024-annual-financial-statements-nedbank-limited.pdf", "type": "Audited Financials", "icon": "📋"},
-    {"name": "POPIA — Protection of Personal Information Act", "file": "Popia-Act.pdf", "type": "Regulatory Compliance", "icon": "🔒"},
-    {"name": "BCBS 239 — Banking Data Principles", "file": "bcbs-239.pdf", "type": "Data Governance", "icon": "🏛️"},
+    {"name": "POPIA - Protection of Personal Information Act", "file": "Popia-Act.pdf", "type": "Regulatory Compliance", "icon": "🔒"},
+    {"name": "BCBS 239 - Banking Data Principles", "file": "bcbs-239.pdf", "type": "Data Governance", "icon": "🏛️"},
     {"name": "Nedbank 2022 Factsheet", "file": "nedbank-factsheet.pdf", "type": "Company Overview & History", "icon": "📑"},
     {"name": "Nedbank Historical Firsts", "file": "nedbank-firsts.pdf", "type": "Corporate History", "icon": "📜"},
 ]
