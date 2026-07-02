@@ -282,6 +282,6 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown('<p class="footer-text">Document-grounded responses only</p>', unsafe_allow_html=True)
 with col2:
-    st.markdown('<p class="footer-text" style="text-align:center">Built with LangChain · Groq LLaMA3 · FAISS · Streamlit</p>', unsafe_allow_html=True)
+    st.markdown('<p class="footer-text" style="text-align:center">Built with Python, · LangChain · Groq LLaMA3 · FAISS · Streamlit</p>', unsafe_allow_html=True)
 with col3:
     st.markdown('<p class="footer-text" style="text-align:right"><a href="https://github.com/thobanizondi">GitHub</a> · <a href="https://datascienceportfol.io/thobanizondi">Portfolio</a></p>', unsafe_allow_html=True)
