@@ -153,7 +153,6 @@ def initialize_rag(version="v3-nedbank"):
     return qa_chain
 
 # --- Portfolio Disclaimer ---
-# --- Portfolio Disclaimer ---
 st.markdown("""
 <div class="disclaimer-banner">
 ⚠️ <strong>Portfolio Project Disclaimer:</strong> This is an independent portfolio project built by
@@ -207,7 +206,7 @@ with st.sidebar:
     - No PII exposure
     """)
     st.markdown("---")
-    st.markdown("### ℹDisclaimer")
+    st.markdown("### Disclaimer")
     st.caption("""This assistant provides information from loaded public documents only.
     It does not constitute financial, legal, or regulatory advice.
     Always consult qualified professionals for formal guidance.""")
