@@ -153,9 +153,10 @@ def initialize_rag(version="v3-nedbank"):
     return qa_chain
 
 # --- Portfolio Disclaimer ---
+# --- Portfolio Disclaimer ---
 st.markdown("""
 <div class="disclaimer-banner">
-<strong>Portfolio Project Disclaimer:</strong> This is an independent portfolio project built by
+⚠️ <strong>Portfolio Project Disclaimer:</strong> This is an independent portfolio project built by
 <strong>Thobani Antony Zondi</strong> to demonstrate RAG and GenAI capabilities using publicly available
 Nedbank documents. It is <strong>not an official Nedbank product</strong> and is not affiliated with or
 endorsed by Nedbank Group Limited.
