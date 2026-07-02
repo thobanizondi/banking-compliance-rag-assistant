@@ -34,7 +34,7 @@ This project demonstrates end-to-end RAG pipeline delivery: document ingestion, 
 
 ## Live Demo
 
-🔗 **[Coming Soon — Deploying to Streamlit Cloud]**
+🔗 **[Try the Live App →](https://banking-compliance-assistant.streamlit.app/)**
 
 ---
 
@@ -215,13 +215,13 @@ Open your browser at `http://localhost:8501`
 ## Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/nedbank-rag-assistant-home.png)
 
 ### Suggested Questions
-![Suggested Questions](screenshots/suggested-questions.png)
+![Suggested Questions](screenshots/nedbank-rag-assistant-questions.png)
 
 ### Answer Example
-![Answer](screenshots/answer.png)
+![Answer](screenshots/nedbank-rag-assistant-answer2.png)
 
 ---
 
