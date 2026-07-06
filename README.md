@@ -1,6 +1,6 @@
 # 🏦 Banking Compliance & Intelligence Assistant
 
-> An AI-powered Retrieval-Augmented Generation (RAG) application that reads verified banking documents and answers compliance, governance, and financial questions using document-grounded responses only.
+An AI-powered Retrieval-Augmented Generation (RAG) application that reads verified banking documents and answers compliance, governance, and financial questions using document-grounded responses only.
 
 **Built by [Thobani Antony Zondi](https://datascienceportfol.io/thobanizondi) · Portfolio Project · Not an official Nedbank product**
 
@@ -96,8 +96,8 @@ Document-grounded Answer → Streamlit Chat Interface
 | Nedbank 2024 Integrated Report | Strategy & Governance | Nedbank Group Investor Relations |
 | Nedbank 2024 Annual Results Booklet | Financial Results | Nedbank Group Investor Relations |
 | Nedbank 2024 Annual Financial Statements | Audited Financials | Nedbank Group Investor Relations |
-| POPIA — Protection of Personal Information Act | Regulatory Compliance | Department of Justice South Africa |
-| BCBS 239 — Principles for Effective Risk Data Aggregation | Data Governance | Bank for International Settlements |
+| POPIA - Protection of Personal Information Act | Regulatory Compliance | Department of Justice South Africa |
+| BCBS 239 - Principles for Effective Risk Data Aggregation | Data Governance | Bank for International Settlements |
 | Nedbank 2022 Factsheet | Company Overview & History | Nedbank Group |
 | Nedbank Historical Firsts | Corporate History | Nedbank Group |
 
