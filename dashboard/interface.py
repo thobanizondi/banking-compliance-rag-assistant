@@ -3,6 +3,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
+import requests
 from retrieval_engine.rag_engine import load_all_documents, build_vector_store, build_qa_chain
 
 st.set_page_config(
@@ -10,6 +11,19 @@ st.set_page_config(
     page_icon="🏦",
     layout="wide"
 )
+
+# --- View Counter ---
+def get_view_count():
+    try:
+        response = requests.get(
+            "https://api.countapi.xyz/hit/thobanizondi-banking-compliance-rag/views",
+            timeout=3
+        )
+        return response.json().get("value", "N/A")
+    except Exception:
+        return "N/A"
+
+view_count = get_view_count()
 
 # --- Nedbank Colour Scheme ---
 # Primary green: #007B40
@@ -181,6 +195,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 # --- Sidebar ---
 with st.sidebar:
     st.markdown("## 🏦 Nedbank Assistant")
+    st.markdown(f"👁️ **Total Views:** {view_count}")
     st.markdown("---")
     st.markdown("### Loaded Documents")
     st.markdown("")
