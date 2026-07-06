@@ -36,6 +36,9 @@ This project demonstrates end-to-end RAG pipeline delivery: document ingestion, 
 
 🔗 **[Try the Live App →](https://banking-compliance-assistant.streamlit.app/)**
 
+## Usage Analytics
+
+The app includes a lightweight view counter displayed in the sidebar, tracking total page loads via [CounterAPI](https://counterapi.dev). This provides a rough signal of app engagement without requiring any backend infrastructure or user data collection.
 ---
 
 ## Features
