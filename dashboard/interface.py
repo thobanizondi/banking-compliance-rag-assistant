@@ -16,10 +16,10 @@ st.set_page_config(
 def get_view_count():
     try:
         response = requests.get(
-            "https://api.countapi.xyz/hit/thobanizondi-banking-compliance-rag/views",
+            "https://api.counterapi.dev/v1/thobanizondi-banking-rag/views/up",
             timeout=3
         )
-        return response.json().get("value", "N/A")
+        return response.json().get("count", "N/A")
     except Exception:
         return "N/A"
 
