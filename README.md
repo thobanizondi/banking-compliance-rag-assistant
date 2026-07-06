@@ -26,7 +26,7 @@
 
 ## Overview
 
-The Banking Compliance & Intelligence Assistant is a production-style RAG application that ingests 7 publicly available banking and regulatory documents — including Nedbank's 2024 Annual Reports, POPIA, and BCBS 239 — and answers natural-language questions with answers sourced exclusively from those documents.
+The Banking Compliance & Intelligence Assistant is a production-style RAG application that ingests 7 publicly available banking and regulatory documents, including Nedbank's 2024 Annual Reports, POPIA, and BCBS 239 — and answers natural-language questions with answers sourced exclusively from those documents.
 
 This project demonstrates end-to-end RAG pipeline delivery: document ingestion, chunking, local vector embeddings, FAISS similarity search, and LLM inference via Groq LLaMA 3.3 70B, served through a professional Streamlit chat interface styled with Nedbank's brand colours.
 
@@ -40,16 +40,16 @@ This project demonstrates end-to-end RAG pipeline delivery: document ingestion, 
 
 ## Features
 
--  **Document-grounded answers only** — no hallucination, no external knowledge
+-  **Document-grounded answers only** - no hallucination, no external knowledge
 -  **7 verified banking documents** loaded and searchable
 -  **POPIA and BCBS 239 compliance** awareness built in
--  **Nedbank 2024 financial data** — headline earnings, risk, strategy
+-  **Nedbank 2024 financial data** - headline earnings, risk, strategy
 -  **Nedbank history** from 1831 to present
 -  **Security guardrails** enforced at system prompt level
 -  **Chat interface** with suggested compliance questions
 -  **Nedbank-branded UI** using official green colour scheme
 -  **Fast inference** via Groq LLaMA 3.3 70B
--  **Free to run** — no paid API required beyond Groq free tier
+-  **Free to run** - no paid API required beyond Groq free tier
 
 ---
 
@@ -109,14 +109,14 @@ All documents are publicly available. No confidential or proprietary data is use
 
 The following guardrails are enforced at the system prompt level on every query:
 
--  **Document-grounded only** — answers must come from loaded documents, never external knowledge
--  **No hallucination policy** — if the answer is not in the documents, the assistant says so
--  **Source citation required** — every answer must cite the source document
--  **No financial advice** — the assistant declines investment or financial recommendations
--  **No legal opinions** — regulatory information is provided as-is, not as legal advice
--  **POPIA-aware** — PII and sensitive personal data questions are declined and redirected
--  **No speculation** — future performance, stock prices, and market predictions are refused
--  **Banking domain only** — off-topic questions are declined
+-  **Document-grounded only** - answers must come from loaded documents, never external knowledge
+-  **No hallucination policy** - if the answer is not in the documents, the assistant says so
+-  **Source citation required** - every answer must cite the source document
+-  **No financial advice** - the assistant declines investment or financial recommendations
+-  **No legal opinions** - regulatory information is provided as-is, not as legal advice
+-  **POPIA-aware** - PII and sensitive personal data questions are declined and redirected
+-  **No speculation** - future performance, stock prices, and market predictions are refused
+-  **Banking domain only** - off-topic questions are declined
 
 ---
 
@@ -251,4 +251,4 @@ Johannesburg, South Africa
 
 ## 📄 License
 
-MIT License — free to use and adapt with attribution.
+MIT License - free to use and adapt with attribution.
