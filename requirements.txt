@@ -8,4 +8,4 @@ pypdf
 sentence-transformers
 streamlit
 python-dotenv
-groq
+groqrequests
