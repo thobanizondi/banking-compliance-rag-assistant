@@ -52,7 +52,7 @@ def build_qa_chain(vector_store):
         docs = vector_store.similarity_search(question, k=5)
         context = "\n\n".join(doc.page_content for doc in docs)
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",
             messages=[
                 {
                     "role": "system",
