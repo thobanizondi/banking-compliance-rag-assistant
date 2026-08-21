@@ -26,7 +26,7 @@ An AI-powered Retrieval-Augmented Generation (RAG) application that reads verifi
 
 ## Overview
 
-The Banking Compliance & Intelligence Assistant is a production-style RAG application that ingests 7 publicly available banking and regulatory documents, including Nedbank's 2024 Annual Reports, POPIA, and BCBS 239 — and answers natural-language questions with answers sourced exclusively from those documents.
+The Banking Compliance & Intelligence Assistant is a production-style RAG application that ingests 7 publicly available banking and regulatory documents, including Nedbank's 2024 Annual Reports, POPIA, and BCBS 239, and answers natural-language questions with answers sourced exclusively from those documents.
 
 This project demonstrates end-to-end RAG pipeline delivery: document ingestion, chunking, local vector embeddings, FAISS similarity search, and LLM inference via Groq's GPT-OSS 120B model, served through a professional Streamlit chat interface styled with Nedbank's brand colours.
 
@@ -52,7 +52,7 @@ The app includes a lightweight view counter displayed in the sidebar, tracking t
 -  **Security guardrails** enforced at system prompt level
 -  **Chat interface** with suggested compliance questions
 -  **Nedbank-branded UI** using official green colour scheme
--  **Fast inference** via Groq LLaMA 3.3 70B
+-  **Fast inference** via Groq's GPT-OSS 120B model
 -  **Free to run** - no paid API required beyond Groq free tier
 
 ---
@@ -88,7 +88,7 @@ Document-grounded Answer → Streamlit Chat Interface
 | Embeddings | HuggingFace all-MiniLM-L6-v2 | Convert chunks to vectors locally — no API cost |
 | Vector Store | FAISS | Index and search vectors by semantic similarity |
 | Retrieval | FAISS similarity search | Return top-5 most relevant chunks per question |
-| LLM Inference | Groq LLaMA 3.3 70B | Generate answers from retrieved context |
+| LLM Inference | Groq's GPT-OSS 120B model| Generate answers from retrieved context |
 | UI | Streamlit | Professional chat interface with Nedbank branding |
 
 ---
@@ -209,7 +209,7 @@ Open your browser at `http://localhost:8501`
 | LangChain Text Splitters | Latest | Document chunking |
 | FAISS CPU | Latest | Vector similarity search |
 | HuggingFace Sentence Transformers | Latest | Local embedding model |
-| Groq | Latest | LLM inference (LLaMA 3.3 70B) |
+| Groq | Latest | LLM inference (Groq's GPT-OSS 120B model) |
 | PyPDF | Latest | PDF text extraction |
 | Streamlit | Latest | Web UI framework |
 | Python Dotenv | Latest | Environment variable management |
