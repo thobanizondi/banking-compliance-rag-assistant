@@ -28,7 +28,7 @@ An AI-powered Retrieval-Augmented Generation (RAG) application that reads verifi
 
 The Banking Compliance & Intelligence Assistant is a production-style RAG application that ingests 7 publicly available banking and regulatory documents, including Nedbank's 2024 Annual Reports, POPIA, and BCBS 239 — and answers natural-language questions with answers sourced exclusively from those documents.
 
-This project demonstrates end-to-end RAG pipeline delivery: document ingestion, chunking, local vector embeddings, FAISS similarity search, and LLM inference via Groq LLaMA 3.3 70B, served through a professional Streamlit chat interface styled with Nedbank's brand colours.
+This project demonstrates end-to-end RAG pipeline delivery: document ingestion, chunking, local vector embeddings, FAISS similarity search, and LLM inference via Groq's GPT-OSS 120B model, served through a professional Streamlit chat interface styled with Nedbank's brand colours.
 
 ---
 
