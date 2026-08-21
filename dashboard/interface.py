@@ -16,10 +16,12 @@ st.set_page_config(
 def get_view_count():
     try:
         response = requests.get(
-            "https://api.counterapi.dev/v1/thobanizondi-banking-rag/views/up",
+            "https://api.counterapi.dev/v2/thobani-zondis-team-5205/first-counter-5205/up",
+            headers={"Authorization": f"Bearer {os.getenv('COUNTER_API_KEY')}"},
             timeout=3
         )
-        return response.json().get("count", "N/A")
+        data = response.json()
+        return data.get("data", {}).get("up_count", "N/A")
     except Exception:
         return "N/A"
 
