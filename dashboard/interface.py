@@ -4,7 +4,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
 import requests
-from retrieval_engine.rag_engine import load_all_documents, build_vector_store, build_qa_chain
+from retrieval_engine.rag_engine import load_or_build_vector_store, build_qa_chain
 
 st.set_page_config(
     page_title="Nedbank Banking Compliance Assistant",
@@ -161,8 +161,10 @@ DOCUMENTS = [
 # --- Load RAG pipeline ---
 @st.cache_resource(show_spinner=False)
 def initialize_rag(version="v3-nedbank"):
-    text = load_all_documents("documents")
-    vector_store = build_vector_store(text)
+    # Loads a cached FAISS index from disk if one exists, otherwise builds it
+    # fresh from the PDFs in documents/ and saves it for next time. This avoids
+    # re-processing all 7 PDFs and re-computing embeddings on every restart.
+    vector_store = load_or_build_vector_store("documents")
     qa_chain = build_qa_chain(vector_store)
     return qa_chain
 
@@ -297,6 +299,6 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown('<p class="footer-text">Document-grounded responses only</p>', unsafe_allow_html=True)
 with col2:
-    st.markdown('<p class="footer-text" style="text-align:center">Built with Python, · LangChain · Groq LLaMA3 · FAISS · Streamlit</p>', unsafe_allow_html=True)
+    st.markdown('<p class="footer-text" style="text-align:center">Built with Python · LangChain · Groq GPT-OSS · FAISS · Streamlit</p>', unsafe_allow_html=True)
 with col3:
     st.markdown('<p class="footer-text" style="text-align:right"><a href="https://github.com/thobanizondi">GitHub</a> · <a href="https://datascienceportfol.io/thobanizondi">Portfolio</a></p>', unsafe_allow_html=True)

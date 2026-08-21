@@ -11,6 +11,10 @@ load_dotenv()
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+# Where the cached FAISS index is stored on disk
+FAISS_INDEX_PATH = "vector_store_cache"
+
+
 def load_all_documents(data_folder: str) -> str:
     all_text = ""
     pdf_files = glob.glob(os.path.join(data_folder, "*.pdf"))
@@ -32,7 +36,14 @@ def load_all_documents(data_folder: str) -> str:
     print(f"Total characters extracted: {len(all_text)}")
     return all_text
 
+
+def get_embeddings():
+    """Shared embeddings model - same one used for building and loading the index."""
+    return HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+
 def build_vector_store(text: str):
+    """Builds a fresh FAISS index from raw text, then saves it to disk for reuse."""
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=500,
         chunk_overlap=50
@@ -40,12 +51,38 @@ def build_vector_store(text: str):
     chunks = splitter.split_text(text)
     print(f"Text split into {len(chunks)} chunks")
 
-    embeddings = HuggingFaceEmbeddings(
-        model_name="all-MiniLM-L6-v2"
-    )
+    embeddings = get_embeddings()
     vector_store = FAISS.from_texts(chunks, embeddings)
     print("Vector store built successfully")
+
+    vector_store.save_local(FAISS_INDEX_PATH)
+    print(f"Vector store cached to disk at '{FAISS_INDEX_PATH}'")
+
     return vector_store
+
+
+def load_or_build_vector_store(data_folder: str):
+    """
+    Loads the FAISS index from disk if a cached version exists.
+    Otherwise, rebuilds it from the PDF documents and saves it for next time.
+    This avoids re-processing all 7 PDFs and re-computing embeddings on every
+    app restart, which is the main cause of CPU throttling on Streamlit Cloud.
+    """
+    if os.path.exists(FAISS_INDEX_PATH):
+        print(f"Found cached vector store at '{FAISS_INDEX_PATH}' - loading from disk")
+        embeddings = get_embeddings()
+        vector_store = FAISS.load_local(
+            FAISS_INDEX_PATH,
+            embeddings,
+            allow_dangerous_deserialization=True  # safe here: we created this file ourselves
+        )
+        print("Vector store loaded from cache successfully")
+        return vector_store
+
+    print("No cached vector store found - building fresh from PDFs")
+    text = load_all_documents(data_folder)
+    return build_vector_store(text)
+
 
 def build_qa_chain(vector_store):
     def qa_chain(question: str) -> str:
